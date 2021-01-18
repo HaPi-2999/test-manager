@@ -48,6 +48,21 @@ class TaskUser extends BaseModel
         ]);
     }
 
+    public function asArray(): array
+    {
+        $data = [
+           'status'  => $this->status,
+           'scheduled_execution_time'  => $this->scheduled_execution_time,
+           'actual_execution_time'  => $this->actual_execution_time,
+        ];
+
+        if ($this->user) {
+            $data['user'] = $this->user->asArrayShort();
+        }
+
+        return $data;
+    }
+
     public function getUser(): ActiveQuery
     {
         return $this->hasOne(User::class, ['id' => 'user_id']);

@@ -28,7 +28,7 @@ class ChangeStatusTaskHistory extends BaseModel
     public function rules(): array
     {
         return ArrayHelper::merge(parent::rules(), [
-           [['task_id', 'user_id'], 'string'],
+           [['task_id', 'user_id'], 'integer'],
            [['status'], 'string']
         ]);
     }

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace app\models\enums;
-
 
 use yii2mod\enum\helpers\BaseEnum;
 

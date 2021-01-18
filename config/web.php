@@ -1,5 +1,6 @@
 <?php
 
+use app\models\User;
 use app\models\enums\RoleEnum;
 use yii\caching\FileCache;
 use yii\debug\Module;
@@ -24,13 +25,12 @@ $config = [
         ],
         'authManager' => [
             'class' => DbManager::class,
-            'defaultRoles' => [RoleEnum::LEADER, RoleEnum::MANAGER, RoleEnum::TESTER, RoleEnum::PROGRAMMER]
         ],
         'cache' => [
             'class' => FileCache::class,
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => User::class,
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [

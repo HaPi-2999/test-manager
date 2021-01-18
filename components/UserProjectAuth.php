@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\api\components;
+namespace app\components;
 
 use app\models\User;
 use yii\filters\auth\AuthMethod;
